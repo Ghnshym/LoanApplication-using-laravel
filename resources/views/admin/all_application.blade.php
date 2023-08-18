@@ -44,11 +44,42 @@
             <td>{{ $user->business_monthly_income }}</td>
             <td>{{ $user->status }}</td>
             <td>{{ $user->reject_reason }}</td>
+
+            {{-- <td>
+                @if($order->delivery_status == 'processing')
+                     <a onclick="return confirm('Are You Sure To Delivery is Confirmed')" href="{{ url('delivered', $order->id) }}" class="btn btn-danger">Delivered</a>
+                @else
+                    <p style="color: green;">Delivered</p>
+                @endif
+            </td> --}}
+
+
             <td>
+                @if($user->status == 'processing' ||
+                $user->status == 'Accepted by office' ||
+                $user->status == 'Rejected by officer')
+
                 <a onclick="return confirm('Are you sure to accept this request')" href="{{ url('/accept_loan_request', $user->id) }}" class="btn btn-success">Accept</a>
+                @elseif($user->status == 'Rejected')
+                <p style="color: green;text-align:center;">-</p>
+                @else
+                <p style="color: green;">Accepted</p>
+                @endif
+
             </td>
             <td>
+                @if($user->status == 'processing' ||
+                $user->status == 'Accepted by office' ||
+                $user->status == 'Rejected by officer')
+
                 <a href="{{ url('/reject_page', $user->id) }}" class="btn btn-danger">Reject</a>
+
+                @elseif($user->status == 'Accepted')
+                <p style="color: red;text-align:center;">-</p>
+                @else
+                <p style="color: red;">Rejected</p>
+                @endif
+
             </td>
         </tr>
         @endforeach

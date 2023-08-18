@@ -93,10 +93,21 @@
                     <td>{{ $user->status }}</td>
                     <td>{{ $user->reject_reason }}</td>
                     <td>
+                        @if($user->status == 'processing')
                         <a onclick="return confirm('Are you sure to accepted this request')" href="{{ url('/accept_by_officer', $user->id) }}" class="btn btn-success">Accept</a>
+                        
+                        @else
+                        <p style="color:green;text-align:center;">-</p>
+                        @endif
+                        
                     </td>
                     <td>
+                        @if($user->status == 'processing')
                         <a href="{{ url('/reject_request', $user->id) }}" class="btn btn-danger">Reject</a>
+                        
+                        @else
+                        <p style="color:rgb(247, 35, 3);text-align:center;">-</p>
+                        @endif
                     </td>
                 </tr>
             @endforeach
