@@ -14,7 +14,8 @@
         .navbar-nav.right-aligned {
             padding-right: 10px;
         }
-        #home{
+
+        #home {
             width: 100%;
             height: 650px;
             background-image: url("{{ asset('background.jpg') }}");

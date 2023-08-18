@@ -1,11 +1,11 @@
 {{-- header  --}}
 @include('home.header')
 
-          <div class="container">
+<div class="container">
 
-            <img src="{{ asset('main.jpg') }}" alt="" class="mt-3" style="height: 630px;">
-            
-          </div>
-    
+    <img src="{{ asset('main.jpg') }}" alt="" class="mt-3" style="height: 630px;">
+
+</div>
+
 {{-- foooter --}}
 @include('home.footer')
