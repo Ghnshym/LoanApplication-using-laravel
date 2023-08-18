@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card dashboard-item bg-success">
                 <div class="card-body text-center">
@@ -63,5 +63,5 @@
     </div>
 
 
-{{-- footer --}}
-@include('admin.footer')
+    {{-- footer --}}
+    @include('admin.footer')

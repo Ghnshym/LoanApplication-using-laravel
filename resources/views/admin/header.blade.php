@@ -48,7 +48,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav right-aligned">
-
                     <li class="nav-item">
                         <x-app-layout>
                         </x-app-layout>
