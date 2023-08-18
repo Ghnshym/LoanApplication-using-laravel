@@ -55,7 +55,6 @@
         <table class="table table-success table-striped table-hover">
             <thead>
             <tr>
-                {{-- <th>User id</th> --}}
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Email</th>
@@ -77,7 +76,6 @@
             <tbody>
             @foreach ($users as $user )
                 <tr>
-                    {{-- <td>{{ $user->user_id }}</td> --}}
                     <td>{{ $user->first_name }}</td>
                     <td>{{ $user->phone_number }}</td>
                     <td>{{ $user->email }}</td>
@@ -95,16 +93,13 @@
                     <td>
                         @if($user->status == 'processing')
                         <a onclick="return confirm('Are you sure to accepted this request')" href="{{ url('/accept_by_officer', $user->id) }}" class="btn btn-success">Accept</a>
-                        
                         @else
                         <p style="color:green;text-align:center;">-</p>
                         @endif
-                        
                     </td>
                     <td>
                         @if($user->status == 'processing')
                         <a href="{{ url('/reject_request', $user->id) }}" class="btn btn-danger">Reject</a>
-                        
                         @else
                         <p style="color:rgb(247, 35, 3);text-align:center;">-</p>
                         @endif
