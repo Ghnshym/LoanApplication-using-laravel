@@ -154,12 +154,3 @@ class HomeController extends Controller
         }
     }
 }
-
-
-
-
-
-
-
-
-

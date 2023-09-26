@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('business_type')->nullable();
             $table->decimal('business_monthly_income', 10, 2)->nullable();
             $table->string('status')->default('processing');
-            $table->string('reject_reason');
+            $table->string('reject_reason')->default('processing');
             $table->timestamps();
         });
     }
